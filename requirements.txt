@@ -1,7 +1,9 @@
 appdirs==1.4.3
 cycler==0.10.0
 functools32==3.2.3.post2
-Lasagne==0.2
+#Lasagne==0.2.dev1
+# pip install --upgrade https://github.com/Lasagne/Lasagne/archive/master.zip pip install --upgrade 
+# git+https://github.com/dnouri/nolearn.git@master#egg=nolearn==0.6a0.dev0
 matplotlib==2.0.2
 numpy==1.12.1
 packaging==16.8
