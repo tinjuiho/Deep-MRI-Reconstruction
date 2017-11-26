@@ -78,7 +78,7 @@ def load_training_valid_test_data():
     trainData = np.transpose(trainData, (2, 0, 1)).reshape((-1, 64, 64))
     validData = np.transpose(validData, (2, 0, 1)).reshape((-1, 64, 64))
     testData = np.transpose(testData, (2, 0, 1)).reshape((-1, 64, 64))
-    print "trainData.shape ", trainData.shape
+    print "trainData.shape ",trainData.shape
     return trainData, validData, testData
 
 
