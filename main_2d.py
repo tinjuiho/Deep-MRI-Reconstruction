@@ -78,8 +78,8 @@ def load_training_valid_test_data():
     trainData = np.transpose(trainData, (2, 0, 1)).reshape((-1, 64, 64))
     validData = np.transpose(validData, (2, 0, 1)).reshape((-1, 64, 64))
     testData = np.transpose(testData, (2, 0, 1)).reshape((-1, 64, 64))
-    print ("trainData.shape")
-    print (trainData.shape)
+    print ("trainData.shape ", trainData.shape)
+
     return trainData, validData, testData
 
 
@@ -153,7 +153,9 @@ if __name__ == '__main__':
     acc = float(args.acceleration_factor[0])  # undersampling rate
     num_epoch = int(args.num_epoch[0])
     batch_size = int(args.batch_size[0])
-    Nx, Ny = 64, 64  # input size per image
+    # input size per image
+    Nx, Ny = 128, 128 # demo setting
+    # Nx, Ny = 64, 64   # our setting
     save_fig = args.savefig
     save_every = 5
 
@@ -184,8 +186,8 @@ if __name__ == '__main__':
 
 
     # Create dataset
-    # train, validate, test = create_dummy_data()
-    train, validate, test = load_training_valid_test_data()
+    train, validate, test = create_dummy_data()
+    # train, validate, test = load_training_valid_test_data()
 
     print('Start Training...')
     for epoch in xrange(num_epoch):
