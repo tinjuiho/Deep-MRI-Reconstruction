@@ -1,0 +1,55 @@
+(virdir) gg1420000@eecs542-ea2:~/MRI_fianl_project/Deep-MRI-Reconstruction$ python main_2d.py --num_epoch 5 --batch_size 2
+WARNING (theano.tensor.blas): Using NumPy C-API based implementation for BLAS functions.
+Using CPU version of fft layers
+
++-----------------------------------------------+
+| In order to use Conv3D,                       |
+| theano.config.device == cuda is required.     |
++-----------------------------------------------+
+
+Undersampling Rate: 0.25
+ Compiling ... 
+ ... Done, took 1.4185 s
+Start Training...
+Epoch 1/5
+ time: 173.871111155s
+ training loss:         0.000252
+ validation loss:       0.000214
+ test loss:             0.000217
+ base PSNR:             24.042862
+ test PSNR:             24.339345
+
+Epoch 2/5
+ time: 173.708534956s
+ training loss:         0.000201
+ validation loss:       0.000182
+ test loss:             0.000185
+ base PSNR:             23.991358
+ test PSNR:             24.384964
+model parameters saved at /home/gg1420000/MRI_fianl_project/Deep-MRI-Reconstruction/d2_c2_epoch_1.npz
+
+Epoch 3/5
+ time: 172.935165882s
+ training loss:         0.000174
+ validation loss:       0.000165
+ test loss:             0.000163
+ base PSNR:             24.074674
+ test PSNR:             24.468297
+model parameters saved at /home/gg1420000/MRI_fianl_project/Deep-MRI-Reconstruction/d2_c2_epoch_2.npz
+
+Epoch 4/5
+ time: 172.400178909s
+ training loss:         0.000158
+ validation loss:       0.000147
+ test loss:             0.000152
+ base PSNR:             24.029449
+ test PSNR:             24.512774
+ 
+Epoch 5/5
+ time: 171.726336002s
+ training loss:         0.000148
+ validation loss:       0.000146
+ test loss:             0.000152
+ base PSNR:             24.047806
+ test PSNR:             24.424933
+model parameters saved at /home/gg1420000/MRI_fianl_project/Deep-MRI-Reconstruction/d2_c2_epoch_4.npz
