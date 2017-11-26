@@ -66,6 +66,18 @@ def create_dummy_data():
 
     return train, validate, test
 
+def load_training_valid_test_data():
+    """
+    trainData: 64 x 64 x 100
+    validData: 64 x 64 x 20
+    testData: 64 x 64 x 30
+    """
+    trainData = loadmat(join(project_root, './data/trainData.mat'))['trainData']
+    validData = loadmat(join(project_root, './data/validData.mat'))['validData']
+    testData = loadmat(join(project_root, './data/testData.mat'))['testData']
+
+    return trainData, validData, testData
+
 
 def compile_fn(network, net_config, args):
     """
@@ -168,7 +180,8 @@ if __name__ == '__main__':
 
 
     # Create dataset
-    train, validate, test = create_dummy_data()
+    # train, validate, test = create_dummy_data()
+    train, validate, test = load_training_valid_test_data()
 
     print('Start Training...')
     for epoch in xrange(num_epoch):
