@@ -75,10 +75,10 @@ def load_training_valid_test_data():
     trainData = loadmat(join(project_root, './data/trainData.mat'))['trainData']
     validData = loadmat(join(project_root, './data/validData.mat'))['validData']
     testData = loadmat(join(project_root, './data/testData.mat'))['testData']
-    trainData = np.transpose(trainData, (2, 0, 1))
-    validData = np.transpose(validData, (2, 0, 1))
-    testData = np.transpose(testData, (2, 0, 1))
-
+    trainData = np.transpose(trainData, (2, 0, 1)).reshape((-1, 64, 64))
+    validData = np.transpose(validData, (2, 0, 1)).reshape((-1, 64, 64))
+    testData = np.transpose(testData, (2, 0, 1)).reshape((-1, 64, 64))
+    print "trainData.shape ", trainData.shape
     return trainData, validData, testData
 
 
