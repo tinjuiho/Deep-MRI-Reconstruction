@@ -153,7 +153,7 @@ if __name__ == '__main__':
     acc = float(args.acceleration_factor[0])  # undersampling rate
     num_epoch = int(args.num_epoch[0])
     batch_size = int(args.batch_size[0])
-    Nx, Ny = 128, 128
+    Nx, Ny = 64, 64  # input size per image
     save_fig = args.savefig
     save_every = 5
 
