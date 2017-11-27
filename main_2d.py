@@ -154,8 +154,8 @@ if __name__ == '__main__':
     num_epoch = int(args.num_epoch[0])
     batch_size = int(args.batch_size[0])
     # input size per image
-    # Nx, Ny = 128, 128 # demo setting
-    Nx, Ny = 64, 64   # our setting
+    Nx, Ny = 128, 128 # demo setting
+    # Nx, Ny = 64, 64   # our setting
     save_fig = args.savefig
     save_every = 5
 
@@ -186,8 +186,8 @@ if __name__ == '__main__':
 
 
     # Create dataset
-    # train, validate, test = create_dummy_data()
-    train, validate, test = load_training_valid_test_data()
+    train, validate, test = create_dummy_data()
+    # train, validate, test = load_training_valid_test_data()
 
     print('Start Training...')
     for epoch in xrange(num_epoch):
