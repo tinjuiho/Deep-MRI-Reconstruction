@@ -5,6 +5,8 @@ import os
 import time
 import numpy as np
 import theano
+import theano.sandbox.cuda
+theano.sandbox.cuda.use("gpu0")
 import theano.tensor as T
 import lasagne
 import argparse
