@@ -274,5 +274,5 @@ if __name__ == '__main__':
             name = '%s_epoch_%d.npz' % (model_name, epoch)
             np.savez(join(save_dir, name),
                      *lasagne.layers.get_all_param_values(net))
-            print('model parameters saved at %s' % join(os.getcwd(), name))
+            print('model parameters saved at %s' % join(save_dir, name))
             print('')
