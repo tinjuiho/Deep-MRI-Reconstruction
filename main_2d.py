@@ -167,14 +167,14 @@ if __name__ == '__main__':
 
     # Specify network
     input_shape = (batch_size, 2, Nx, Ny)
-    net_config, net,  = build_d2_c2(input_shape)
+    # net_config, net,  = build_d2_c2(input_shape)
 
     # Load D5-C5 with pretrained params
-    # net_config, net,  = build_d5_c5(input_shape)
+    net_config, net,  = build_d5_c5(input_shape)
     # D5-C5 with pre-trained parameters
-    # with np.load('./models/pretrained/d5_c5.npz') as f:
-    #     param_values = [f['arr_{0}'.format(i)] for i in range(len(f.files))]
-    #     lasagne.layers.set_all_param_values(net, param_values)
+    with np.load('./models/pretrained/d5_c5.npz') as f:
+        param_values = [f['arr_{0}'.format(i)] for i in range(len(f.files))]
+        lasagne.layers.set_all_param_values(net, param_values)
 
     # Compute acceleration rate
     dummy_mask = cs.cartesian_mask((10, Nx, Ny), acc, sample_n=8)
