@@ -165,12 +165,12 @@ if __name__ == '__main__':
     if not os.path.isdir(save_dir):
         os.makedirs(save_dir)
 
-    # Specify network
+    # Specify network (d2_c2 or d5_c5)
     input_shape = (batch_size, 2, Nx, Ny)
     # net_config, net,  = build_d2_c2(input_shape)
-
-    # Load D5-C5 with pretrained params
     net_config, net,  = build_d5_c5(input_shape)
+
+    # Load D5-C5 with pretrained params  !! only build_d5_c5 is selected !!
     # D5-C5 with pre-trained parameters
     with np.load('./models/pretrained/d5_c5.npz') as f:
         param_values = [f['arr_{0}'.format(i)] for i in range(len(f.files))]
