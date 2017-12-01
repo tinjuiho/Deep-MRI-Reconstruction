@@ -148,7 +148,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     # Project config
-    model_name = 'd5_c5V2'
+    model_name = 'd5_c5V10'
     #gauss_ivar = float(args.gauss_ivar[0])  # undersampling rate
     acc = float(args.acceleration_factor[0])  # undersampling rate
     num_epoch = int(args.num_epoch[0])
@@ -158,7 +158,7 @@ if __name__ == '__main__':
     # Nx, Ny = 64, 64   # our setting
     Nx, Ny = 192, 192   # our setting
     save_fig = args.savefig
-    save_every = 5
+    save_every = 1
 
     # Configure directory info
     project_root = '.'
