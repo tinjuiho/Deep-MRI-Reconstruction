@@ -172,9 +172,9 @@ if __name__ == '__main__':
 
     # Load D5-C5 with pretrained params  !! only build_d5_c5 is selected !!
     # D5-C5 with pre-trained parameters
-    # with np.load('./models/pretrained/d5_c5.npz') as f:
-    #     param_values = [f['arr_{0}'.format(i)] for i in range(len(f.files))]
-    #     lasagne.layers.set_all_param_values(net, param_values)
+    with np.load('./models/pretrained/d5_c5.npz') as f:
+        param_values = [f['arr_{0}'.format(i)] for i in range(len(f.files))]
+        lasagne.layers.set_all_param_values(net, param_values)
 
     # Compute acceleration rate
     dummy_mask = cs.cartesian_mask((10, Nx, Ny), acc, sample_n=8)
