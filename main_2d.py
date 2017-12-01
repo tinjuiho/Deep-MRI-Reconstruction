@@ -155,7 +155,8 @@ if __name__ == '__main__':
     batch_size = int(args.batch_size[0])
     # input size per image
     # Nx, Ny = 128, 128 # demo setting
-    Nx, Ny = 64, 64   # our setting
+    # Nx, Ny = 64, 64   # our setting
+    Nx, Ny = 192, 192   # our setting
     save_fig = args.savefig
     save_every = 5
 
