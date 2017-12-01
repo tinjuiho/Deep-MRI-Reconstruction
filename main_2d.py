@@ -68,16 +68,16 @@ def create_dummy_data():
 
 def load_training_valid_test_data():
     """
-    trainData: 64 x 64 x 100
-    validData: 64 x 64 x 20
-    testData: 64 x 64 x 30
+    trainData: 64 x 64 x XXX
+    validData: 64 x 64 x XXX
+    testData: 64 x 64 x XXX
     """
     trainData = loadmat(join(project_root, './data/trainData.mat'))['trainData']
     validData = loadmat(join(project_root, './data/validData.mat'))['validData']
     testData = loadmat(join(project_root, './data/testData.mat'))['testData']
-    trainData = np.transpose(trainData, (2, 0, 1)).reshape((-1, 64, 64))
-    validData = np.transpose(validData, (2, 0, 1)).reshape((-1, 64, 64))
-    testData = np.transpose(testData, (2, 0, 1)).reshape((-1, 64, 64))
+    trainData = np.transpose(trainData, (2, 0, 1)).reshape((-1, 192, 192))
+    validData = np.transpose(validData, (2, 0, 1)).reshape((-1, 192, 192))
+    testData = np.transpose(testData, (2, 0, 1)).reshape((-1, 192, 192))
     print ("trainData.shape ", trainData.shape)
 
     return trainData, validData, testData
