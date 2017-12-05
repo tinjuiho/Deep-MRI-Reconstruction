@@ -12,8 +12,8 @@ def cascade_resnet(pr, net, input_layer, n=5, nf=64, b=lasagne.init.Constant, **
     net[pr+'conv1'] = batch_norm(l.Conv(input_layer, nf, 3, b=b(), name=pr+'conv1'))
 
     for i in xrange(2, n):
-        net[pr+'conv%d'%i] = l.Conv(net[pr+'conv%d'%(i-1)], nf, 3, b=b(),
-                                    name=pr+'conv%d'%i)
+        net[pr+'conv%d'%i] = batch_norm(l.Conv(net[pr+'conv%d'%(i-1)], nf, 3, b=b(),
+                                    name=pr+'conv%d'%i))
 
     net[pr+'conv_aggr'] = l.ConvAggr(net[pr+'conv%d'%(n-1)], n_channel, 3,
                                      b=b(), name=pr+'conv_aggr')
