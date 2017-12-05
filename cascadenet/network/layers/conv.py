@@ -3,6 +3,8 @@ import lasagne
 from lasagne.layers import Layer, prelu
 from helper import ensure_set_name
 
+from lasagne.layers import batch_norm 
+
 if theano.config.device == 'cuda':
     from lasagne.layers.dnn import Conv2DDNNLayer as ConvLayer
     # MaxPool2DDNNLayer as MaxPool2DLayer
@@ -18,8 +20,8 @@ def Conv(incoming, num_filters, filter_size=3,
     """
     ensure_set_name('conv', kwargs)
 
-    return ConvLayer(incoming, num_filters, filter_size, stride, pad, W=W, b=b,
-                     nonlinearity=nonlinearity, **kwargs)
+    return batch_norm(ConvLayer(incoming, num_filters, filter_size, stride, pad, W=W, b=b,
+                     nonlinearity=nonlinearity, **kwargs))
 
 
 class ConvPrelu(Layer):
