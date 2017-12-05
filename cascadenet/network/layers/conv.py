@@ -53,8 +53,8 @@ class ConvAggr(Layer):
                  pad='same', W=lasagne.init.HeNormal(), b=None, **kwargs):
         ensure_set_name('conv_aggr', kwargs)
         super(ConvAggr, self).__init__(incoming, **kwargs)
-        self.conv = Conv(incoming, num_channels, filter_size, stride, pad=pad,
-                         W=W, b=b, nonlinearity=None, **kwargs)
+        self.conv = batch_norm(Conv(incoming, num_channels, filter_size, stride, pad=pad,
+                         W=W, b=b, nonlinearity=None, **kwargs))
 
         # copy params
         self.params = self.conv.params.copy()
