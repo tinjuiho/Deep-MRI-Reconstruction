@@ -21,7 +21,7 @@ def Conv(incoming, num_filters, filter_size=3,
     ensure_set_name('conv', kwargs)
 
     return batch_norm(ConvLayer(incoming, num_filters, filter_size, stride, pad, W=W, b=b,
-                     nonlinearity=nonlinearity, **kwargs))
+                     nonlinearity=nonlinearity, **kwargs), **kwargs)
 
 
 class ConvPrelu(Layer):
