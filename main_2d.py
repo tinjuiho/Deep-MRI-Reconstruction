@@ -148,7 +148,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     # Project config
-    model_name = 'd5_c5V10'
+    model_name = 'd5_c5V10_acc_8'
     #gauss_ivar = float(args.gauss_ivar[0])  # undersampling rate
     acc = float(args.acceleration_factor[0])  # undersampling rate
     num_epoch = int(args.num_epoch[0])
