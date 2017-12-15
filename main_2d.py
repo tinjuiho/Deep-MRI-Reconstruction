@@ -80,7 +80,7 @@ def load_training_valid_test_data():
     testData = np.transpose(testData, (2, 0, 1)).reshape((-1, 192, 192))
     print ("trainData.shape ", trainData.shape)
 
-    return trainData, validData, testData
+    return trainData[:, :, 1:50], validData, testData
 
 
 def compile_fn(network, net_config, args):
