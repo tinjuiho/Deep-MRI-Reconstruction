@@ -78,9 +78,8 @@ def load_training_valid_test_data():
     trainData = np.transpose(trainData, (2, 0, 1)).reshape((-1, 192, 192))
     validData = np.transpose(validData, (2, 0, 1)).reshape((-1, 192, 192))
     testData = np.transpose(testData, (2, 0, 1)).reshape((-1, 192, 192))
-    print ("trainData.shape ", trainData.shape)
 
-    return testData, validData, trainData
+    return trainData, validData, testData
 
 
 def compile_fn(network, net_config, args):
@@ -178,7 +177,7 @@ if __name__ == '__main__':
     #     lasagne.layers.set_all_param_values(net, param_values)
 
     # Compute acceleration rate
-    dummy_mask = cs.cartesian_mask((10, Nx, Ny), acc, sample_n=8)
+    dummy_mask = cs.cartesian_mask((10, Nx, Ny), acc, sample_n=4)
     sample_und_factor = cs.undersampling_rate(dummy_mask)
     print('Undersampling Rate: {:.2f}'.format(sample_und_factor))
 
@@ -189,6 +188,10 @@ if __name__ == '__main__':
     # Create dataset
     # train, validate, test = create_dummy_data()
     train, validate, test = load_training_valid_test_data()
+    print ("train.shape ", train.shape)
+    print ("validate.shape ", validate.shape)
+    print ("test.shape ", test.shape)
+
 
     print('Start Training...')
     for epoch in xrange(num_epoch):
