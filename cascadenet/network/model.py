@@ -15,6 +15,9 @@ def cascade_resnet_modified(pr, net, input_layer, n=5, nf=64, b=lasagne.init.Con
     net[pr+'conv3'] = l.Conv(net[pr+'conv2'], nf, 3, b=b(), name=pr+'conv3')
     net[pr+'conv4'] = l.Conv(net[pr+'conv3'], nf, 3, b=b(), name=pr+'conv4')
     net[pr+'transConv1'] = transConv(net[pr+'conv4'], net[pr+'conv4'].input_shape[1], net[pr+'conv4'].filter_size, stride=net[pr+'conv4'].stride, crop=net[pr+'conv4'].pad, W=net[pr+'conv4'].W, flip_filters=not net[pr+'conv4'].flip_filters)
+    net[pr+'transConv2'] = transConv(net[pr+'conv3'], net[pr+'conv3'].input_shape[1], net[pr+'conv3'].filter_size, stride=net[pr+'conv3'].stride, crop=net[pr+'conv3'].pad, W=net[pr+'conv3'].W, flip_filters=not net[pr+'conv3'].flip_filters)
+    net[pr+'transConv3'] = transConv(net[pr+'conv2'], net[pr+'conv2'].input_shape[1], net[pr+'conv2'].filter_size, stride=net[pr+'conv2'].stride, crop=net[pr+'conv2'].pad, W=net[pr+'conv2'].W, flip_filters=not net[pr+'conv2'].flip_filters)
+    net[pr+'transConv4'] = transConv(net[pr+'conv1'], net[pr+'conv1'].input_shape[1], net[pr+'conv1'].filter_size, stride=net[pr+'conv1'].stride, crop=net[pr+'conv1'].pad, W=net[pr+'conv1'].W, flip_filters=not net[pr+'conv1'].flip_filters)
 
     net[pr+'conv_aggr'] = l.ConvAggr(net[pr+'conv4'], n_channel, 3, b=b(), name=pr+'conv_aggr')
     net[pr+'res'] = l.ResidualLayer([net[pr+'conv_aggr'], input_layer], name=pr+'res')
