@@ -177,7 +177,7 @@ if __name__ == '__main__':
     #     lasagne.layers.set_all_param_values(net, param_values)
 
     # Compute acceleration rate
-    dummy_mask = cs.cartesian_mask((10, Nx, Ny), acc, sample_n=20)
+    dummy_mask = cs.cartesian_mask((10, Nx, Ny), acc, sample_n=8)
     sample_und_factor = cs.undersampling_rate(dummy_mask)
     print('Undersampling Rate: {:.2f}'.format(sample_und_factor))
 
