@@ -6,6 +6,20 @@ from lasagne.layers import batch_norm
 from collections import OrderedDict
 
 
+def cascade_resnet_modified(pr, net, input_layer, n=5, nf=64, b=lasagne.init.Constant, **kwargs):
+    shape = lasagne.layers.get_output_shape(input_layer)
+    n_channel = shape[1]
+    net[pr+'conv1'] = l.Conv(input_layer, nf, 3, b=b(), name=pr+'conv1')
+    net[pr+'conv2'] = l.Conv(net[pr+'conv1'], nf, 3, b=b(), name=pr+'conv2')
+    net[pr+'conv3'] = l.Conv(net[pr+'conv2'], nf, 3, b=b(), name=pr+'conv3')
+    net[pr+'conv4'] = l.Conv(net[pr+'conv3'], nf, 3, b=b(), name=pr+'conv4')
+    net[pr+'conv_aggr'] = l.ConvAggr(net[pr+'conv4'], n_channel, 3, b=b(), name=pr+'conv_aggr')
+    net[pr+'res'] = l.ResidualLayer([net[pr+'conv_aggr'], input_layer], name=pr+'res')
+    output_layer = net[pr+'res']
+
+    return net, output_layer
+
+
 def cascade_resnet(pr, net, input_layer, n=5, nf=64, b=lasagne.init.Constant, **kwargs):
     shape = lasagne.layers.get_output_shape(input_layer)
     n_channel = shape[1]
@@ -95,7 +109,7 @@ def build_d2_c2(shape):
 
 
 def build_d5_c5(shape):
-    return build_cascade_cnn_from_list(shape, [(cascade_resnet, 5)])
+    return build_cascade_cnn_from_list(shape, [(cascade_resnet_modified, 5)])
 
 
 def build_d2_c2_s(shape):
