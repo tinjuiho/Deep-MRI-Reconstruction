@@ -12,7 +12,7 @@ def cascade_resnet_modified(pr, net, input_layer, n=5, nf=64, b=lasagne.init.Con
     n_channel = shape[1]
     net[pr+'conv1'] = l.Conv(input_layer, nf, 3, b=b(), name=pr+'conv1')
     net[pr+'conv2'] = l.Conv(net[pr+'conv1'], nf, 3, b=b(), name=pr+'conv2')
-    net[pr+'conv3'] = l.Conv(net[pr+'conv2'], nf, 4, b=b(), name=pr+'conv3')
+    net[pr+'conv3'] = l.Conv(net[pr+'conv2'], nf, 5, b=b(), name=pr+'conv3')
     net[pr+'conv4'] = l.Conv(net[pr+'conv3'], nf, 5, b=b(), name=pr+'conv4')
     net[pr+'transConv1'] = transConv(net[pr+'conv4'], net[pr+'conv4'].input_shape[1], net[pr+'conv4'].filter_size, stride=net[pr+'conv4'].stride, crop=net[pr+'conv4'].pad, W=net[pr+'conv4'].W, flip_filters=not net[pr+'conv4'].flip_filters)
     net[pr+'transConv2'] = transConv(net[pr+'conv3'], net[pr+'conv3'].input_shape[1], net[pr+'conv3'].filter_size, stride=net[pr+'conv3'].stride, crop=net[pr+'conv3'].pad, W=net[pr+'conv3'].W, flip_filters=not net[pr+'conv3'].flip_filters)
