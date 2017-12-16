@@ -3,7 +3,7 @@ import cascadenet.network.layers as l
 from collections import OrderedDict
 
 
-def cascade_resnet(pr, net, input_layer, n=5, nf=64, b=lasagne.init.Constant, **kwargs):
+def cascade_resnet(pr, net, input_layer, n=20, nf=64, b=lasagne.init.Constant, **kwargs):
     shape = lasagne.layers.get_output_shape(input_layer)
     n_channel = shape[1]
     net[pr+'conv1'] = l.Conv(input_layer, nf, 3, b=b(), name=pr+'conv1')
