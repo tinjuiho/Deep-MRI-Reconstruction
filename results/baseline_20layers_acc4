@@ -1,0 +1,176 @@
+WARNING (theano.tensor.blas): Using NumPy C-API based implementation for BLAS functions.
+Using cuDNN version 6021 on context None
+Preallocating 10867/11439 Mb (0.950000) on cuda0
+Mapped name None to device cuda0: Tesla K80 (0000:00:04.0)
+Using CPU version of fft layers
+Undersampling Rate: 0.25
+ Compiling ... 
+ ... Done, took 94.2238 s
+trainData.shape  (85, 192, 192)
+Start Training...
+Epoch 1/100
+ time: 86.4352030754s
+ training loss:         0.007676
+ validation loss:       0.006325
+ test loss:             0.005637
+ base PSNR:             25.687626
+ test PSNR:             27.250285
+Epoch 2/100
+ time: 86.1530768871s
+ training loss:         0.005252
+ validation loss:       0.004432
+ test loss:             0.004279
+ base PSNR:             25.327137
+ test PSNR:             27.261249
+model parameters saved at ./models/baseline_acc_12/baseline_acc_12_epoch_1.npz
+
+Epoch 3/100
+ time: 86.2237830162s
+ training loss:         0.004067
+ validation loss:       0.003944
+ test loss:             0.003654
+ base PSNR:             25.556418
+ test PSNR:             27.433952
+model parameters saved at ./models/baseline_acc_12/baseline_acc_12_epoch_2.npz
+
+Epoch 4/100
+ time: 86.2280859947s
+ training loss:         0.003656
+ validation loss:       0.003280
+ test loss:             0.003255
+ base PSNR:             25.218809
+ test PSNR:             27.707658
+Epoch 5/100
+ time: 86.1920189857s
+ training loss:         0.003242
+ validation loss:       0.003145
+ test loss:             0.002979
+ base PSNR:             25.578921
+ test PSNR:             28.170191
+Epoch 6/100
+ time: 86.2092189789s
+ training loss:         0.003054
+ validation loss:       0.002571
+ test loss:             0.002671
+ base PSNR:             25.509845
+ test PSNR:             28.708885
+Epoch 7/100
+ time: 86.1907892227s
+ training loss:         0.002822
+ validation loss:       0.002564
+ test loss:             0.002492
+ base PSNR:             25.554687
+ test PSNR:             28.672252
+Epoch 8/100
+ time: 86.1844871044s
+ training loss:         0.002711
+ validation loss:       0.002489
+ test loss:             0.002510
+ base PSNR:             25.606012
+ test PSNR:             28.634194
+Epoch 9/100
+ time: 86.2142281532s
+ training loss:         0.002525
+ validation loss:       0.002481
+ test loss:             0.002363
+ base PSNR:             25.521979
+ test PSNR:             28.730876
+Epoch 10/100
+ time: 86.1832211018s
+ training loss:         0.002365
+ validation loss:       0.001992
+ test loss:             0.002029
+ base PSNR:             25.504970
+ test PSNR:             29.369842
+Epoch 11/100
+ time: 86.1907970905s
+ training loss:         0.002267
+ validation loss:       0.002222
+ test loss:             0.002096
+ base PSNR:             25.491498
+ test PSNR:             29.139342
+Epoch 12/100
+ time: 86.1659588814s
+ training loss:         0.002217
+ validation loss:       0.001878
+ test loss:             0.001995
+ base PSNR:             25.562441
+ test PSNR:             29.165758
+Epoch 13/100
+ time: 86.1714630127s
+ training loss:         0.002079
+ validation loss:       0.002021
+ test loss:             0.001846
+ base PSNR:             25.461207
+ test PSNR:             29.701429
+Epoch 14/100
+ time: 86.2475690842s
+ training loss:         0.002101
+ validation loss:       0.001870
+ test loss:             0.001802
+ base PSNR:             25.419560
+ test PSNR:             29.631927
+Epoch 15/100
+ time: 86.1844038963s
+ training loss:         0.002005
+ validation loss:       0.001680
+ test loss:             0.001703
+ base PSNR:             25.798381
+ test PSNR:             29.973825
+Epoch 16/100
+ time: 86.2017672062s
+ training loss:         0.001899
+ validation loss:       0.001679
+ test loss:             0.001675
+ base PSNR:             25.567468
+ test PSNR:             29.801104
+Epoch 17/100
+ time: 86.1915941238s
+ training loss:         0.001934
+ validation loss:       0.001666
+ test loss:             0.001629
+ base PSNR:             25.478639
+ test PSNR:             29.907311
+Epoch 18/100
+ time: 86.1711671352s
+ training loss:         0.001832
+ validation loss:       0.001725
+ test loss:             0.001681
+ base PSNR:             25.408472
+ test PSNR:             29.643511
+Epoch 19/100
+ time: 86.2303750515s
+ training loss:         0.001859
+ validation loss:       0.001818
+ test loss:             0.001553
+ base PSNR:             25.682898
+ test PSNR:             30.181891
+Epoch 20/100
+ time: 86.1688330173s
+ training loss:         0.001773
+ validation loss:       0.001540
+ test loss:             0.001461
+ base PSNR:             25.455325
+ test PSNR:             30.378245
+Epoch 21/100
+ time: 86.2339589596s
+ training loss:         0.001758
+ validation loss:       0.001457
+ test loss:             0.001420
+ base PSNR:             25.552277
+ test PSNR:             30.368220
+Epoch 22/100
+ time: 86.1989271641s
+ training loss:         0.001749
+ validation loss:       0.001498
+ test loss:             0.001480
+ base PSNR:             25.600379
+ test PSNR:             30.260293
+^CTraceback (most recent call last):
+  File "main_2d.py", line 201, in <module>
+    err = train_fn(im_und, mask, k_und, im_gnd)[0]
+  File "/home/gg1420000/MRI_fianl_project/virdir/local/lib/python2.7/site-packages/theano/compile/function_module.py", line 903, in __call__
+    self.fn() if output_subset is None else\
+  File "/home/gg1420000/MRI_fianl_project/virdir/local/lib/python2.7/site-packages/theano/gof/op.py", line 891, in rval
+    def rval(p=p, i=node_input_storage, o=node_output_storage, n=node):
+KeyboardInterrupt
