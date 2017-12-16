@@ -126,7 +126,7 @@ def build_d2_c2(shape):
 
 def build_d5_c5(shape):
     # return build_cascade_cnn_from_list(shape, [(cascade_resnet, 5)])
-    return build_cascade_cnn_from_list(shape, [(cascade_resnet_modified, 5)])
+    return build_cascade_cnn_from_list(shape, [(cascade_resnet_modified, 2)])
 
 def build_d2_c2_s(shape):
     def cascade_d2(pr, net, input_layer, **kwargs):
