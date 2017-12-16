@@ -1,0 +1,716 @@
+WARNING (theano.tensor.blas): Using NumPy C-API based implementation for BLAS functions.
+Using cuDNN version 6021 on context None
+Preallocating 10867/11439 Mb (0.950000) on cuda0
+Mapped name None to device cuda0: Tesla K80 (0000:00:04.0)
+Using CPU version of fft layers
+Undersampling Rate: 0.08
+ Compiling ... 
+ ... Done, took 16.3615 s
+trainData.shape  (85, 192, 192)
+Start Training...
+Epoch 1/100
+ time: 19.965875864s
+ training loss:         0.006427
+ validation loss:       0.006042
+ test loss:             0.005214
+ base PSNR:             23.341565
+ test PSNR:             24.356544
+Epoch 2/100
+ time: 19.7902851105s
+ training loss:         0.005548
+ validation loss:       0.005582
+ test loss:             0.004852
+ base PSNR:             23.395160
+ test PSNR:             24.694690
+model parameters saved at ./models/baseline_acc_12/baseline_acc_12_epoch_1.npz
+
+Epoch 3/100
+ time: 19.9487390518s
+ training loss:         0.005372
+ validation loss:       0.005606
+ test loss:             0.004768
+ base PSNR:             23.323527
+ test PSNR:             24.762097
+model parameters saved at ./models/baseline_acc_12/baseline_acc_12_epoch_2.npz
+
+Epoch 4/100
+ time: 19.889824152s
+ training loss:         0.005212
+ validation loss:       0.005618
+ test loss:             0.004980
+ base PSNR:             23.321495
+ test PSNR:             24.490767
+Epoch 5/100
+ time: 19.9763660431s
+ training loss:         0.005077
+ validation loss:       0.005124
+ test loss:             0.004843
+ base PSNR:             23.276714
+ test PSNR:             24.693266
+Epoch 6/100
+ time: 19.8854029179s
+ training loss:         0.004985
+ validation loss:       0.005181
+ test loss:             0.004314
+ base PSNR:             23.379586
+ test PSNR:             25.116432
+Epoch 7/100
+ time: 19.8609700203s
+ training loss:         0.004748
+ validation loss:       0.004886
+ test loss:             0.004423
+ base PSNR:             23.369322
+ test PSNR:             25.038009
+Epoch 8/100
+ time: 19.9643862247s
+ training loss:         0.004745
+ validation loss:       0.004785
+ test loss:             0.004459
+ base PSNR:             23.296375
+ test PSNR:             24.965608
+Epoch 9/100
+ time: 19.9444451332s
+ training loss:         0.004607
+ validation loss:       0.004388
+ test loss:             0.004524
+ base PSNR:             23.315171
+ test PSNR:             24.876853
+Epoch 10/100
+ time: 20.0452339649s
+ training loss:         0.004542
+ validation loss:       0.004247
+ test loss:             0.004161
+ base PSNR:             23.407448
+ test PSNR:             25.330992
+Epoch 11/100
+ time: 19.8807241917s
+ training loss:         0.004631
+ validation loss:       0.004552
+ test loss:             0.004298
+ base PSNR:             23.293724
+ test PSNR:             25.082477
+Epoch 12/100
+ time: 19.7617280483s
+ training loss:         0.004507
+ validation loss:       0.004585
+ test loss:             0.004306
+ base PSNR:             23.264409
+ test PSNR:             25.016013
+Epoch 13/100
+ time: 19.715667963s
+ training loss:         0.004316
+ validation loss:       0.004014
+ test loss:             0.004023
+ base PSNR:             23.326976
+ test PSNR:             25.290403
+Epoch 14/100
+ time: 19.8030228615s
+ training loss:         0.004344
+ validation loss:       0.003907
+ test loss:             0.003917
+ base PSNR:             23.279164
+ test PSNR:             25.424146
+Epoch 15/100
+ time: 19.8896951675s
+ training loss:         0.004194
+ validation loss:       0.003730
+ test loss:             0.004026
+ base PSNR:             23.315428
+ test PSNR:             25.263317
+Epoch 16/100
+ time: 19.9240391254s
+ training loss:         0.004124
+ validation loss:       0.003547
+ test loss:             0.003558
+ base PSNR:             23.360853
+ test PSNR:             25.886257
+Epoch 17/100
+ time: 19.9861879349s
+ training loss:         0.003974
+ validation loss:       0.003780
+ test loss:             0.003792
+ base PSNR:             23.220338
+ test PSNR:             25.543105
+Epoch 18/100
+ time: 19.8936991692s
+ training loss:         0.003997
+ validation loss:       0.003594
+ test loss:             0.003712
+ base PSNR:             23.329622
+ test PSNR:             25.569558
+Epoch 19/100
+ time: 19.936674118s
+ training loss:         0.003996
+ validation loss:       0.003488
+ test loss:             0.003797
+ base PSNR:             23.346822
+ test PSNR:             25.517775
+Epoch 20/100
+ time: 19.9500439167s
+ training loss:         0.003801
+ validation loss:       0.003797
+ test loss:             0.003463
+ base PSNR:             23.338240
+ test PSNR:             26.043926
+Epoch 21/100
+ time: 19.8973779678s
+ training loss:         0.003820
+ validation loss:       0.003604
+ test loss:             0.003481
+ base PSNR:             23.306230
+ test PSNR:             25.900708
+Epoch 22/100
+ time: 19.9041287899s
+ training loss:         0.003794
+ validation loss:       0.003070
+ test loss:             0.003388
+ base PSNR:             23.356061
+ test PSNR:             25.995095
+Epoch 23/100
+ time: 19.9691359997s
+ training loss:         0.003808
+ validation loss:       0.003439
+ test loss:             0.003358
+ base PSNR:             23.322353
+ test PSNR:             26.056239
+Epoch 24/100
+ time: 20.0389051437s
+ training loss:         0.003612
+ validation loss:       0.003479
+ test loss:             0.003479
+ base PSNR:             23.305708
+ test PSNR:             25.856368
+Epoch 25/100
+ time: 19.95023489s
+ training loss:         0.003577
+ validation loss:       0.003421
+ test loss:             0.003294
+ base PSNR:             23.333440
+ test PSNR:             26.019779
+Epoch 26/100
+ time: 19.836728096s
+ training loss:         0.003528
+ validation loss:       0.003012
+ test loss:             0.003356
+ base PSNR:             23.272142
+ test PSNR:             26.194192
+Epoch 27/100
+ time: 19.8190500736s
+ training loss:         0.003464
+ validation loss:       0.003080
+ test loss:             0.003066
+ base PSNR:             23.252286
+ test PSNR:             26.505464
+Epoch 28/100
+ time: 19.8290228844s
+ training loss:         0.003489
+ validation loss:       0.003224
+ test loss:             0.003286
+ base PSNR:             23.340032
+ test PSNR:             26.077327
+Epoch 29/100
+ time: 19.9759130478s
+ training loss:         0.003401
+ validation loss:       0.003286
+ test loss:             0.003051
+ base PSNR:             23.372877
+ test PSNR:             26.530216
+Epoch 30/100
+ time: 20.0109090805s
+ training loss:         0.003380
+ validation loss:       0.003008
+ test loss:             0.003017
+ base PSNR:             23.312313
+ test PSNR:             26.554785
+Epoch 31/100
+ time: 20.0054368973s
+ training loss:         0.003406
+ validation loss:       0.003013
+ test loss:             0.003027
+ base PSNR:             23.304297
+ test PSNR:             26.422740
+Epoch 32/100
+ time: 19.9249949455s
+ training loss:         0.003387
+ validation loss:       0.002836
+ test loss:             0.003060
+ base PSNR:             23.400326
+ test PSNR:             26.387403
+Epoch 33/100
+ time: 19.9015769958s
+ training loss:         0.003347
+ validation loss:       0.002982
+ test loss:             0.003114
+ base PSNR:             23.324951
+ test PSNR:             26.362805
+Epoch 34/100
+ time: 19.7872190475s
+ training loss:         0.003285
+ validation loss:       0.002935
+ test loss:             0.003122
+ base PSNR:             23.295484
+ test PSNR:             26.303381
+Epoch 35/100
+ time: 19.8360650539s
+ training loss:         0.003291
+ validation loss:       0.003130
+ test loss:             0.002890
+ base PSNR:             23.396337
+ test PSNR:             26.731731
+Epoch 36/100
+ time: 19.9565031528s
+ training loss:         0.003268
+ validation loss:       0.003154
+ test loss:             0.002992
+ base PSNR:             23.367342
+ test PSNR:             26.528128
+Epoch 37/100
+ time: 19.8682079315s
+ training loss:         0.003374
+ validation loss:       0.002811
+ test loss:             0.003020
+ base PSNR:             23.328450
+ test PSNR:             26.445548
+Epoch 38/100
+ time: 19.9034881592s
+ training loss:         0.003195
+ validation loss:       0.002881
+ test loss:             0.002723
+ base PSNR:             23.349805
+ test PSNR:             26.874325
+Epoch 39/100
+ time: 19.8865439892s
+ training loss:         0.003246
+ validation loss:       0.002852
+ test loss:             0.002796
+ base PSNR:             23.428707
+ test PSNR:             26.736742
+Epoch 40/100
+ time: 19.8713028431s
+ training loss:         0.003183
+ validation loss:       0.003202
+ test loss:             0.002966
+ base PSNR:             23.364332
+ test PSNR:             26.423273
+Epoch 41/100
+ time: 20.0055279732s
+ training loss:         0.003105
+ validation loss:       0.002755
+ test loss:             0.002728
+ base PSNR:             23.490430
+ test PSNR:             26.879235
+Epoch 42/100
+ time: 19.9590849876s
+ training loss:         0.003111
+ validation loss:       0.002854
+ test loss:             0.002768
+ base PSNR:             23.342031
+ test PSNR:             26.827694
+Epoch 43/100
+ time: 19.8792178631s
+ training loss:         0.003211
+ validation loss:       0.003419
+ test loss:             0.002809
+ base PSNR:             23.418583
+ test PSNR:             26.702641
+Epoch 44/100
+ time: 19.8943288326s
+ training loss:         0.003100
+ validation loss:       0.002667
+ test loss:             0.002852
+ base PSNR:             23.369457
+ test PSNR:             26.630250
+Epoch 45/100
+ time: 19.8955218792s
+ training loss:         0.003089
+ validation loss:       0.002760
+ test loss:             0.002722
+ base PSNR:             23.348050
+ test PSNR:             26.798595
+Epoch 46/100
+ time: 19.9573981762s
+ training loss:         0.003069
+ validation loss:       0.002816
+ test loss:             0.002986
+ base PSNR:             23.373591
+ test PSNR:             26.364587
+Epoch 47/100
+ time: 19.901570797s
+ training loss:         0.003059
+ validation loss:       0.003330
+ test loss:             0.002741
+ base PSNR:             23.204806
+ test PSNR:             26.766146
+Epoch 48/100
+ time: 20.0527751446s
+ training loss:         0.003103
+ validation loss:       0.002961
+ test loss:             0.002596
+ base PSNR:             23.328801
+ test PSNR:             27.035062
+Epoch 49/100
+ time: 19.8968579769s
+ training loss:         0.002999
+ validation loss:       0.003265
+ test loss:             0.002821
+ base PSNR:             23.306464
+ test PSNR:             26.670550
+Epoch 50/100
+ time: 19.9201419353s
+ training loss:         0.003130
+ validation loss:       0.002687
+ test loss:             0.002669
+ base PSNR:             23.297790
+ test PSNR:             26.949812
+Epoch 51/100
+ time: 19.9196810722s
+ training loss:         0.003009
+ validation loss:       0.002633
+ test loss:             0.002704
+ base PSNR:             23.418001
+ test PSNR:             26.857627
+Epoch 52/100
+ time: 19.9543960094s
+ training loss:         0.002959
+ validation loss:       0.002683
+ test loss:             0.002628
+ base PSNR:             23.379321
+ test PSNR:             26.963653
+Epoch 53/100
+ time: 19.9149739742s
+ training loss:         0.003086
+ validation loss:       0.003192
+ test loss:             0.002794
+ base PSNR:             23.373676
+ test PSNR:             26.682505
+Epoch 54/100
+ time: 19.8842759132s
+ training loss:         0.003040
+ validation loss:       0.002692
+ test loss:             0.002870
+ base PSNR:             23.332473
+ test PSNR:             26.484713
+Epoch 55/100
+ time: 19.883450985s
+ training loss:         0.002991
+ validation loss:       0.002574
+ test loss:             0.002620
+ base PSNR:             23.381055
+ test PSNR:             26.941096
+Epoch 56/100
+ time: 19.8545870781s
+ training loss:         0.003046
+ validation loss:       0.002682
+ test loss:             0.002879
+ base PSNR:             23.321537
+ test PSNR:             26.489789
+Epoch 57/100
+ time: 19.8224339485s
+ training loss:         0.003006
+ validation loss:       0.002494
+ test loss:             0.002553
+ base PSNR:             23.348321
+ test PSNR:             27.196566
+Epoch 58/100
+ time: 19.885035038s
+ training loss:         0.003082
+ validation loss:       0.002666
+ test loss:             0.002549
+ base PSNR:             23.369575
+ test PSNR:             27.043443
+Epoch 59/100
+ time: 19.9605789185s
+ training loss:         0.002906
+ validation loss:       0.002718
+ test loss:             0.002741
+ base PSNR:             23.337680
+ test PSNR:             26.840812
+Epoch 60/100
+ time: 19.9741921425s
+ training loss:         0.002857
+ validation loss:       0.002499
+ test loss:             0.002559
+ base PSNR:             23.336351
+ test PSNR:             27.165053
+Epoch 61/100
+ time: 19.8951349258s
+ training loss:         0.002929
+ validation loss:       0.002479
+ test loss:             0.002664
+ base PSNR:             23.343616
+ test PSNR:             26.766325
+Epoch 62/100
+ time: 19.9296860695s
+ training loss:         0.002894
+ validation loss:       0.002528
+ test loss:             0.002667
+ base PSNR:             23.277995
+ test PSNR:             26.790587
+Epoch 63/100
+ time: 19.9675621986s
+ training loss:         0.002968
+ validation loss:       0.002549
+ test loss:             0.002828
+ base PSNR:             23.321936
+ test PSNR:             26.553648
+Epoch 64/100
+ time: 19.8952510357s
+ training loss:         0.002875
+ validation loss:       0.002700
+ test loss:             0.002712
+ base PSNR:             23.308444
+ test PSNR:             26.759580
+Epoch 65/100
+ time: 19.9052028656s
+ training loss:         0.002918
+ validation loss:       0.002972
+ test loss:             0.002632
+ base PSNR:             23.311223
+ test PSNR:             26.832925
+Epoch 66/100
+ time: 20.1172168255s
+ training loss:         0.003045
+ validation loss:       0.002685
+ test loss:             0.002723
+ base PSNR:             23.335764
+ test PSNR:             26.768078
+Epoch 67/100
+ time: 20.1444671154s
+ training loss:         0.002956
+ validation loss:       0.002806
+ test loss:             0.002568
+ base PSNR:             23.352008
+ test PSNR:             26.989527
+Epoch 68/100
+ time: 20.1615719795s
+ training loss:         0.002803
+ validation loss:       0.002638
+ test loss:             0.002710
+ base PSNR:             23.341680
+ test PSNR:             26.710607
+Epoch 69/100
+ time: 20.111754179s
+ training loss:         0.002810
+ validation loss:       0.002604
+ test loss:             0.002574
+ base PSNR:             23.334563
+ test PSNR:             27.097144
+Epoch 70/100
+ time: 20.1591639519s
+ training loss:         0.002739
+ validation loss:       0.002620
+ test loss:             0.002584
+ base PSNR:             23.350650
+ test PSNR:             27.120378
+Epoch 71/100
+ time: 20.1661779881s
+ training loss:         0.002769
+ validation loss:       0.002657
+ test loss:             0.002591
+ base PSNR:             23.405809
+ test PSNR:             27.010194
+Epoch 72/100
+ time: 19.9619951248s
+ training loss:         0.002872
+ validation loss:       0.002704
+ test loss:             0.002583
+ base PSNR:             23.321272
+ test PSNR:             26.924683
+Epoch 73/100
+ time: 20.038495779s
+ training loss:         0.002855
+ validation loss:       0.002671
+ test loss:             0.002394
+ base PSNR:             23.411970
+ test PSNR:             27.363817
+Epoch 74/100
+ time: 20.1242239475s
+ training loss:         0.002873
+ validation loss:       0.002548
+ test loss:             0.002545
+ base PSNR:             23.332555
+ test PSNR:             26.994634
+Epoch 75/100
+ time: 20.2426598072s
+ training loss:         0.002869
+ validation loss:       0.002616
+ test loss:             0.002506
+ base PSNR:             23.409614
+ test PSNR:             27.175776
+Epoch 76/100
+ time: 20.0835371017s
+ training loss:         0.002805
+ validation loss:       0.002671
+ test loss:             0.002587
+ base PSNR:             23.372024
+ test PSNR:             26.943835
+Epoch 77/100
+ time: 20.16868186s
+ training loss:         0.002752
+ validation loss:       0.002400
+ test loss:             0.002546
+ base PSNR:             23.409481
+ test PSNR:             27.087732
+Epoch 78/100
+ time: 20.067898035s
+ training loss:         0.002859
+ validation loss:       0.002500
+ test loss:             0.002438
+ base PSNR:             23.422055
+ test PSNR:             27.262437
+Epoch 79/100
+ time: 20.0297410488s
+ training loss:         0.002830
+ validation loss:       0.002686
+ test loss:             0.002502
+ base PSNR:             23.379572
+ test PSNR:             27.077779
+Epoch 80/100
+ time: 20.079474926s
+ training loss:         0.002745
+ validation loss:       0.002646
+ test loss:             0.002532
+ base PSNR:             23.288453
+ test PSNR:             26.993404
+Epoch 81/100
+ time: 19.988918066s
+ training loss:         0.002819
+ validation loss:       0.002753
+ test loss:             0.002449
+ base PSNR:             23.309610
+ test PSNR:             27.184569
+Epoch 82/100
+ time: 19.9738101959s
+ training loss:         0.002808
+ validation loss:       0.002740
+ test loss:             0.002738
+ base PSNR:             23.321438
+ test PSNR:             26.743874
+Epoch 83/100
+ time: 19.9575469494s
+ training loss:         0.002860
+ validation loss:       0.002364
+ test loss:             0.002427
+ base PSNR:             23.346497
+ test PSNR:             27.321494
+Epoch 84/100
+ time: 19.8465008736s
+ training loss:         0.002785
+ validation loss:       0.002572
+ test loss:             0.002489
+ base PSNR:             23.314675
+ test PSNR:             27.047948
+Epoch 85/100
+ time: 20.1447417736s
+ training loss:         0.002697
+ validation loss:       0.002481
+ test loss:             0.002660
+ base PSNR:             23.282501
+ test PSNR:             26.685460
+Epoch 86/100
+ time: 20.1343431473s
+ training loss:         0.002708
+ validation loss:       0.002619
+ test loss:             0.002672
+ base PSNR:             23.253679
+ test PSNR:             26.709257
+Epoch 87/100
+ time: 20.0753560066s
+ training loss:         0.002681
+ validation loss:       0.002769
+ test loss:             0.002495
+ base PSNR:             23.320134
+ test PSNR:             27.149210
+Epoch 88/100
+ time: 20.136690855s
+ training loss:         0.002777
+ validation loss:       0.002760
+ test loss:             0.002655
+ base PSNR:             23.314460
+ test PSNR:             26.830781
+Epoch 89/100
+ time: 20.0395262241s
+ training loss:         0.002846
+ validation loss:       0.002586
+ test loss:             0.002464
+ base PSNR:             23.414521
+ test PSNR:             27.170719
+Epoch 90/100
+ time: 20.0041241646s
+ training loss:         0.002874
+ validation loss:       0.002573
+ test loss:             0.002640
+ base PSNR:             23.350902
+ test PSNR:             26.804204
+Epoch 91/100
+ time: 20.0104439259s
+ training loss:         0.002823
+ validation loss:       0.002604
+ test loss:             0.002425
+ base PSNR:             23.420885
+ test PSNR:             27.232655
+Epoch 92/100
+ time: 19.9821488857s
+ training loss:         0.002895
+ validation loss:       0.002629
+ test loss:             0.002552
+ base PSNR:             23.293054
+ test PSNR:             26.991579
+Epoch 93/100
+ time: 19.9776170254s
+ training loss:         0.002744
+ validation loss:       0.002411
+ test loss:             0.002484
+ base PSNR:             23.273982
+ test PSNR:             27.051560
+Epoch 94/100
+ time: 20.0774581432s
+ training loss:         0.002656
+ validation loss:       0.002597
+ test loss:             0.002447
+ base PSNR:             23.444544
+ test PSNR:             27.117776
+Epoch 95/100
+ time: 20.115598917s
+ training loss:         0.002776
+ validation loss:       0.002537
+ test loss:             0.002412
+ base PSNR:             23.367282
+ test PSNR:             27.255412
+Epoch 96/100
+ time: 20.0119400024s
+ training loss:         0.002827
+ validation loss:       0.002214
+ test loss:             0.002554
+ base PSNR:             23.369729
+ test PSNR:             26.919145
+Epoch 97/100
+ time: 19.9834070206s
+ training loss:         0.002764
+ validation loss:       0.002900
+ test loss:             0.002541
+ base PSNR:             23.326153
+ test PSNR:             27.027499
+Epoch 98/100
+ time: 19.91091609s
+ training loss:         0.002696
+ validation loss:       0.002414
+ test loss:             0.002634
+ base PSNR:             23.375266
+ test PSNR:             26.829664
+Epoch 99/100
+ time: 20.047082901s
+ training loss:         0.002653
+ validation loss:       0.002680
+ test loss:             0.002475
+ base PSNR:             23.356491
+ test PSNR:             27.082791
+Epoch 100/100
+ time: 20.036495924s
+ training loss:         0.002701
+ validation loss:       0.002267
+ test loss:             0.002319
+ base PSNR:             23.286706
+ test PSNR:             27.371183
+model parameters saved at ./models/baseline_acc_12/baseline_acc_12_epoch_99.npz
+
