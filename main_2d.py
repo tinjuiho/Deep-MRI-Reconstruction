@@ -266,7 +266,7 @@ if __name__ == '__main__':
                 for im_i, pred_i, und_i, mask_i in vis:
                     plt.imsave(join(save_dir, 'im{0}.png'.format(i)),
                                abs(np.concatenate([und_i, pred_i,
-                                                   im_i, im_i - pred_i], 1)),
+                                                   im_i, (im_i - pred_i)*10], 1)),
                                cmap='gray')
                     plt.imsave(join(save_dir, 'mask{0}.png'.format(i)), mask_i,
                                cmap='gray')
