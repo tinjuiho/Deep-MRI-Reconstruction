@@ -18,17 +18,17 @@ def cascade_resnet_modified(pr, net, input_layer, n=5, nf=64, b=lasagne.init.Con
     net[pr+'conv6'] = l.Conv(net[pr+'conv5'], nf, 3, b=b(), name=pr+'conv6')
 
 
-    net[pr+'transConv1'] = transConv(net[pr+'conv12'], net[pr+'conv12'].input_shape[1], net[pr+'conv12'].filter_size, stride=net[pr+'conv12'].stride, crop=net[pr+'conv12'].pad, W=net[pr+'conv12'].W, flip_filters=not net[pr+'conv12'].flip_filters)
+    net[pr+'transConv1'] = transConv(net[pr+'conv6'], net[pr+'conv6'].input_shape[1], net[pr+'conv6'].filter_size, stride=net[pr+'conv6'].stride, crop=net[pr+'conv6'].pad, W=net[pr+'conv6'].W, flip_filters=not net[pr+'conv6'].flip_filters)
     net[pr+'res1'] = l.ResidualLayer([net[pr+'transConv1'], net[pr+'conv5']], name=pr+'res1')
-    net[pr+'transConv2'] = transConv(net[pr+'res1'], net[pr+'conv11'].input_shape[1], net[pr+'conv11'].filter_size, stride=net[pr+'conv11'].stride, crop=net[pr+'conv11'].pad, W=net[pr+'conv11'].W, flip_filters=not net[pr+'conv11'].flip_filters)
+    net[pr+'transConv2'] = transConv(net[pr+'res1'], net[pr+'conv11'].input_shape[1], net[pr+'conv5'].filter_size, stride=net[pr+'conv5'].stride, crop=net[pr+'conv5'].pad, W=net[pr+'conv5'].W, flip_filters=not net[pr+'conv5'].flip_filters)
     net[pr+'res2'] = l.ResidualLayer([net[pr+'transConv2'], net[pr+'conv4']], name=pr+'res2')
-    net[pr+'transConv3'] = transConv(net[pr+'conv10'], net[pr+'conv10'].input_shape[1], net[pr+'conv10'].filter_size, stride=net[pr+'conv10'].stride, crop=net[pr+'conv10'].pad, W=net[pr+'conv10'].W, flip_filters=not net[pr+'conv10'].flip_filters)
+    net[pr+'transConv3'] = transConv(net[pr+'conv10'], net[pr+'conv10'].input_shape[1], net[pr+'conv4'].filter_size, stride=net[pr+'conv4'].stride, crop=net[pr+'conv4'].pad, W=net[pr+'conv4'].W, flip_filters=not net[pr+'conv4'].flip_filters)
     net[pr+'res3'] = l.ResidualLayer([net[pr+'transConv3'], net[pr+'conv3']], name=pr+'res3')
-    net[pr+'transConv4'] = transConv(net[pr+'conv9'], net[pr+'conv9'].input_shape[1], net[pr+'conv9'].filter_size, stride=net[pr+'conv9'].stride, crop=net[pr+'conv9'].pad, W=net[pr+'conv9'].W, flip_filters=not net[pr+'conv9'].flip_filters)
+    net[pr+'transConv4'] = transConv(net[pr+'conv9'], net[pr+'conv9'].input_shape[1], net[pr+'conv3'].filter_size, stride=net[pr+'conv3'].stride, crop=net[pr+'conv3'].pad, W=net[pr+'conv3'].W, flip_filters=not net[pr+'conv3'].flip_filters)
     net[pr+'res4'] = l.ResidualLayer([net[pr+'transConv4'], net[pr+'conv2']], name=pr+'res4')
-    net[pr+'transConv5'] = transConv(net[pr+'conv8'], net[pr+'conv8'].input_shape[1], net[pr+'conv8'].filter_size, stride=net[pr+'conv8'].stride, crop=net[pr+'conv8'].pad, W=net[pr+'conv8'].W, flip_filters=not net[pr+'conv8'].flip_filters)
+    net[pr+'transConv5'] = transConv(net[pr+'conv8'], net[pr+'conv8'].input_shape[1], net[pr+'conv2'].filter_size, stride=net[pr+'conv2'].stride, crop=net[pr+'conv2'].pad, W=net[pr+'conv2'].W, flip_filters=not net[pr+'conv2'].flip_filters)
     net[pr+'res5'] = l.ResidualLayer([net[pr+'transConv5'], net[pr+'conv1']], name=pr+'res5')
-    net[pr+'transConv6'] = transConv(net[pr+'conv7'], net[pr+'conv7'].input_shape[1], net[pr+'conv7'].filter_size, stride=net[pr+'conv7'].stride, crop=net[pr+'conv7'].pad, W=net[pr+'conv7'].W, flip_filters=not net[pr+'conv7'].flip_filters)
+    net[pr+'transConv6'] = transConv(net[pr+'conv7'], net[pr+'conv7'].input_shape[1], net[pr+'conv1'].filter_size, stride=net[pr+'conv1'].stride, crop=net[pr+'conv1'].pad, W=net[pr+'conv1'].W, flip_filters=not net[pr+'conv1'].flip_filters)
     net[pr+'conv_aggr'] = l.ConvAggr(net[pr+'transConv6'], n_channel, 3, b=b(), name=pr+'conv_aggr')
     net[pr+'res'] = l.ResidualLayer([net[pr+'conv_aggr'], input_layer], name=pr+'res')
     output_layer = net[pr+'res']
