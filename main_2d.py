@@ -147,7 +147,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     # Project config
-    model_name = 'skipCon_kernelsize11_acc8_no_cascade'
+    model_name = 'acc4_cascade_5_skipCon'
     #gauss_ivar = float(args.gauss_ivar[0])  # undersampling rate
     acc = float(args.acceleration_factor[0])  # undersampling rate
     num_epoch = int(args.num_epoch[0])
@@ -263,18 +263,18 @@ if __name__ == '__main__':
         print(" test PSNR:\t\t{:.6f}".format(test_psnr))
 
         # save the model
-        if epoch in [1, 2, num_epoch-1]:
-            if save_fig:
-                i = 0
-                for im_i, pred_i, und_i, mask_i in vis:
-                    plt.imsave(join(save_dir, 'im{0}.png'.format(i)),
-                               abs(np.concatenate([und_i, pred_i,
-                                                   im_i, (im_i - pred_i)*10], 1)),
-                               cmap='gray')
-                    plt.imsave(join(save_dir, 'mask{0}.png'.format(i)), mask_i,
-                               cmap='gray')
-                    i += 1
+        if save_fig:
+            i = 0
+            for im_i, pred_i, und_i, mask_i in vis:
+                plt.imsave(join(save_dir, 'epoch{0}_im{1}.png'.format(epoch, i)),
+                           abs(np.concatenate([und_i, pred_i,
+                                               im_i, (im_i - pred_i)*10], 1)),
+                           cmap='gray')
+                plt.imsave(join(save_dir, 'epoch{0}_im{1}.png'.format(epoch, i)), mask_i,
+                           cmap='gray')
+                i += 1
 
+        if epoch in [num_epoch-1]:
             name = '%s_epoch_%d.npz' % (model_name, epoch)
             np.savez(join(save_dir, name),
                      *lasagne.layers.get_all_param_values(net))
