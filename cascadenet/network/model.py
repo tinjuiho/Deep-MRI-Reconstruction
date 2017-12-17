@@ -6,46 +6,16 @@ from lasagne.layers import TransposedConv2DLayer as transConv
 
 from collections import OrderedDict
 
-
-# def cascade_resnet_modified(pr, net, input_layer, n=5, nf=64, b=lasagne.init.Constant, **kwargs):
-#     shape = lasagne.layers.get_output_shape(input_layer)
-#     n_channel = shape[1]
-#     net[pr+'conv1'] = l.Conv(input_layer, nf, 3, b=b(), name=pr+'conv1')
-#     net[pr+'conv2'] = l.Conv(net[pr+'conv1'], nf, 3, b=b(), name=pr+'conv2')
-#     net[pr+'conv3'] = l.Conv(net[pr+'conv2'], nf, 3, b=b(), name=pr+'conv3')
-#     net[pr+'conv4'] = l.Conv(net[pr+'conv3'], nf, 3, b=b(), name=pr+'conv4')
-#     net[pr+'conv5'] = l.Conv(net[pr+'conv4'], nf, 3, b=b(), name=pr+'conv5')
-#     net[pr+'conv6'] = l.Conv(net[pr+'conv5'], nf, 3, b=b(), name=pr+'conv6')
-
-
-#     net[pr+'transConv1'] = transConv(net[pr+'conv6'], net[pr+'conv6'].input_shape[1], net[pr+'conv6'].filter_size, stride=net[pr+'conv6'].stride, crop=net[pr+'conv6'].pad, W=net[pr+'conv6'].W, flip_filters=not net[pr+'conv6'].flip_filters)
-#     net[pr+'res1'] = l.ResidualLayer([net[pr+'transConv1'], net[pr+'conv5']], name=pr+'res1')
-#     net[pr+'transConv2'] = transConv(net[pr+'res1'], net[pr+'conv5'].input_shape[1], net[pr+'conv5'].filter_size, stride=net[pr+'conv5'].stride, crop=net[pr+'conv5'].pad, W=net[pr+'conv5'].W, flip_filters=not net[pr+'conv5'].flip_filters)
-#     net[pr+'res2'] = l.ResidualLayer([net[pr+'transConv2'], net[pr+'conv4']], name=pr+'res2')
-#     net[pr+'transConv3'] = transConv(net[pr+'res2'], net[pr+'conv4'].input_shape[1], net[pr+'conv4'].filter_size, stride=net[pr+'conv4'].stride, crop=net[pr+'conv4'].pad, W=net[pr+'conv4'].W, flip_filters=not net[pr+'conv4'].flip_filters)
-#     net[pr+'res3'] = l.ResidualLayer([net[pr+'transConv3'], net[pr+'conv3']], name=pr+'res3')
-#     net[pr+'transConv4'] = transConv(net[pr+'res3'], net[pr+'conv3'].input_shape[1], net[pr+'conv3'].filter_size, stride=net[pr+'conv3'].stride, crop=net[pr+'conv3'].pad, W=net[pr+'conv3'].W, flip_filters=not net[pr+'conv3'].flip_filters)
-#     net[pr+'res4'] = l.ResidualLayer([net[pr+'transConv4'], net[pr+'conv2']], name=pr+'res4')
-#     net[pr+'transConv5'] = transConv(net[pr+'res4'], net[pr+'conv2'].input_shape[1], net[pr+'conv2'].filter_size, stride=net[pr+'conv2'].stride, crop=net[pr+'conv2'].pad, W=net[pr+'conv2'].W, flip_filters=not net[pr+'conv2'].flip_filters)
-#     net[pr+'res5'] = l.ResidualLayer([net[pr+'transConv5'], net[pr+'conv1']], name=pr+'res5')
-#     net[pr+'transConv6'] = transConv(net[pr+'res5'], net[pr+'conv1'].input_shape[1], net[pr+'conv1'].filter_size, stride=net[pr+'conv1'].stride, crop=net[pr+'conv1'].pad, W=net[pr+'conv1'].W, flip_filters=not net[pr+'conv1'].flip_filters)
-#     net[pr+'conv_aggr'] = l.ConvAggr(net[pr+'transConv6'], n_channel, 3, b=b(), name=pr+'conv_aggr')
-#     net[pr+'res'] = l.ResidualLayer([net[pr+'conv_aggr'], input_layer], name=pr+'res')
-#     output_layer = net[pr+'res']
-
-#     return net, output_layer
-
-
-def cascade_resnet(pr, net, input_layer, n=5, nf=64, b=lasagne.init.Constant, **kwargs):
+def cascade_resnet(pr, net, input_layer, n=20, nf=64, b=lasagne.init.Constant, **kwargs):
     shape = lasagne.layers.get_output_shape(input_layer)
     n_channel = shape[1]
-    net[pr+'conv1'] = l.Conv(input_layer, nf, 11, b=b(), name=pr+'conv1')
+    net[pr+'conv1'] = l.Conv(input_layer, nf, 3, b=b(), name=pr+'conv1')
 
     for i in xrange(2, n):
-        net[pr+'conv%d'%i] = l.Conv(net[pr+'conv%d'%(i-1)], nf, 11, b=b(),
+        net[pr+'conv%d'%i] = l.Conv(net[pr+'conv%d'%(i-1)], nf, 3, b=b(),
                                     name=pr+'conv%d'%i)
 
-    net[pr+'conv_aggr'] = l.ConvAggr(net[pr+'conv%d'%(n-1)], n_channel, 11,
+    net[pr+'conv_aggr'] = l.ConvAggr(net[pr+'conv%d'%(n-1)], n_channel, 3,
                                      b=b(), name=pr+'conv_aggr')
     net[pr+'res'] = l.ResidualLayer([net[pr+'conv_aggr'], input_layer],
                                     name=pr+'res')
@@ -167,7 +137,7 @@ def build_d2_c2(shape):
 
 
 def build_d5_c5(shape):
-    return build_cascade_cnn_from_list(shape, [(cascade_resnet, 1)])
+    return build_cascade_cnn_from_list(shape, [(cascade_resnet, 5)])
     # return build_cascade_cnn_from_list(shape, [(cascade_resnet_modified, 2)])
 
 def build_d2_c2_s(shape):
