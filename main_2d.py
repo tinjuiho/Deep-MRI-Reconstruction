@@ -270,7 +270,7 @@ if __name__ == '__main__':
                            abs(np.concatenate([und_i, pred_i,
                                                im_i, (im_i - pred_i)*10], 1)),
                            cmap='gray')
-                plt.imsave(join(save_dir, 'epoch{0}_im{1}.png'.format(epoch, i)), mask_i,
+                plt.imsave(join(save_dir, 'epoch{0}_mask{1}.png'.format(epoch, i)), mask_i,
                            cmap='gray')
                 i += 1
 
