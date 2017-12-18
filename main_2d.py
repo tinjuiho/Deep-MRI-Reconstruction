@@ -147,7 +147,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     # Project config
-    model_name = 'acc4_cascade_20_skipCon'
+    model_name = 'acc4_new_cascade_5_skipCon'
     #gauss_ivar = float(args.gauss_ivar[0])  # undersampling rate
     acc = float(args.acceleration_factor[0])  # undersampling rate
     num_epoch = int(args.num_epoch[0])
