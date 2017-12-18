@@ -55,7 +55,6 @@ def cascade_resnet_3d_avg(pr, net, input_layer, n=5, nf=64,
 def build_cascade_cnn_from_list(shape, net_meta, lmda=None):
     """
     Create iterative network with more flexibility
-
     net_meta: [(model1, cascade1_n),(model2, cascade2_n),....(modelm, cascadem_n),]
     """
     if not net_meta:
@@ -74,57 +73,43 @@ def build_cascade_cnn_from_list(shape, net_meta, lmda=None):
     
     pr = 'c%d_' % j
     net, output_layer = cascade_net(pr, net, input_layer, **{'cascade_i': j})
-    cascade1_output_layer = output_layer
+    resnet3 = l.ResidualLayer([output_layer, cascade0_output_layer], name=pr+'res')
     net[pr+'dc'] = l.DCLayer([output_layer, net['mask'], net['kspace_input']], shape, inv_noise_level=lmda)
     input_layer = net[pr+'dc']
+    cascade1_output_layer = input_layer
     j += 1
 
     pr = 'c%d_' % j
     net, output_layer = cascade_net(pr, net, input_layer, **{'cascade_i': j})
-    cascade2_output_layer = output_layer
+    resnet3 = l.ResidualLayer([output_layer, cascade1_output_layer], name=pr+'res')
     net[pr+'dc'] = l.DCLayer([output_layer, net['mask'], net['kspace_input']], shape, inv_noise_level=lmda)
     input_layer = net[pr+'dc']
+    cascade2_output_layer = input_layer
     j += 1
 
     pr = 'c%d_' % j
     net, output_layer = cascade_net(pr, net, input_layer, **{'cascade_i': j})
-    cascade3_output_layer = output_layer
     resnet3 = l.ResidualLayer([output_layer, cascade2_output_layer], name=pr+'res')
     net[pr+'dc'] = l.DCLayer([resnet3, net['mask'], net['kspace_input']], shape, inv_noise_level=lmda)
     input_layer = net[pr+'dc']
+    cascade3_output_layer = input_layer
     j += 1
 
     pr = 'c%d_' % j
     net, output_layer = cascade_net(pr, net, input_layer, **{'cascade_i': j})
-    cascade4_output_layer = output_layer
-    resnet4 = l.ResidualLayer([output_layer, cascade1_output_layer], name=pr+'res')
+    resnet4 = l.ResidualLayer([output_layer, cascade3_output_layer], name=pr+'res')
     net[pr+'dc'] = l.DCLayer([resnet4, net['mask'], net['kspace_input']], shape, inv_noise_level=lmda)
     input_layer = net[pr+'dc']
+    cascade4_output_layer = output_layer
     j += 1
 
     pr = 'c%d_' % j
     net, output_layer = cascade_net(pr, net, input_layer, **{'cascade_i': j})
-    cascade5_output_layer = output_layer
-    resnet5 = l.ResidualLayer([output_layer, cascade0_output_layer], name=pr+'res')
+    resnet5 = l.ResidualLayer([output_layer, cascade4_output_layer], name=pr+'res')
     net[pr+'dc'] = l.DCLayer([resnet5, net['mask'], net['kspace_input']], shape, inv_noise_level=lmda)
     input_layer = net[pr+'dc']
+    cascade5_output_layer = output_layer
     j += 1
-
-
-        # Cascade layer
-        # for i in xrange(cascade_n):
-        #     pr = 'c%d_' % j
-        #     net, output_layer = cascade_net(pr, net, input_layer,
-        #                                     **{'cascade_i': j})
-
-        #     # add data consistency layer
-        #     net[pr+'dc'] = l.DCLayer([output_layer,
-        #                               net['mask'],
-        #                               net['kspace_input']],
-        #                              shape,
-        #                              inv_noise_level=lmda)
-        #     input_layer = net[pr+'dc']
-        #     j += 1
 
     output_layer = input_layer
     return net, output_layer
